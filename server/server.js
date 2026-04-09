@@ -13,7 +13,7 @@ connectDB();
 /// Middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://event-management-1eiz.vercel.app"],
+    origin: ["http://localhost:5173", "https://event-management-app-1wjp.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
