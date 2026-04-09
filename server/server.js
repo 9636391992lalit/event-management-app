@@ -11,9 +11,16 @@ const app = express();
 /// Connect MongoDB
 connectDB();
 /// Middleware
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://event-management-app-1wjp.vercel.app",
+  "https://event-management-app-kcwf.vercel.app",
+  process.env.CLIENT_URL,
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://event-management-app-1wjp.vercel.app"],
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
